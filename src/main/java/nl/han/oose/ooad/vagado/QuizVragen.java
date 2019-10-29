@@ -15,6 +15,8 @@ public class QuizVragen {
 
     private static final int AMOUNT_OF_QUESTIONS = 10;
 
+
+
     public List<Vraag> genereerQuizVragen(String naamVragenLijst) {
         Random rand = new Random();
         List<Vraag> vragenlijst = Objects.requireNonNull(getVragenlijst(naamVragenLijst)).getVragen();

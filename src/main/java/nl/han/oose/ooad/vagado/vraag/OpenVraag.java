@@ -9,8 +9,8 @@ public class OpenVraag extends Vraag {
     @Override
     public boolean checkAntwoord(String userAntwoord) {
         for(Antwoord antwoord: antwoorden) {
-            if(!antwoord.checkAntwoord(userAntwoord)) return false;
+            if(antwoord.checkAntwoord(userAntwoord)) return true;
         }
-        return true;
+        return false;
     }
 }

@@ -19,15 +19,17 @@ public class Vragenlijst {
     private int lifetimeBest;
 
     Vraag vraag1 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag2 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag3 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag4 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag5 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag6 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag7 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag8 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag9 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
-    Vraag vraag10 = new MeerkeuzeVraag(1, "Hoevaak heeft het Nederlands Elftal de wereldbeker gewonnen?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag2 = new MeerkeuzeVraag(1, "Ja?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag3 = new MeerkeuzeVraag(1, "Nee?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag4 = new MeerkeuzeVraag(1, "Snbrrttttt?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag5 = new MeerkeuzeVraag(1, "Pizza?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag6 = new MeerkeuzeVraag(1, "Wie is Henk?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag7 = new MeerkeuzeVraag(1, "Is een ham eten?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag8 = new MeerkeuzeVraag(1, "Waar?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag9 = new MeerkeuzeVraag(1, "Wat?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag10 = new MeerkeuzeVraag(1, "Hoeveel kaas eet een kip?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag11 = new MeerkeuzeVraag(1, "Dit is vraag 11?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
+    Vraag vraag12 = new MeerkeuzeVraag(1, "Dit is vraag 12?", new Keuzemogelijkheid[] {new Keuzemogelijkheid("A", "1"), new Keuzemogelijkheid("B", "2"), new Keuzemogelijkheid("C", "3"), new Keuzemogelijkheid("D", "0")}, new Antwoord("B"));
 
     public Vragenlijst(int nummer, String naam, Thema thema) {
         this.nummer = nummer;
@@ -44,6 +46,8 @@ public class Vragenlijst {
         vragen.add(vraag8);
         vragen.add(vraag9);
         vragen.add(vraag10);
+        vragen.add(vraag11);
+        vragen.add(vraag12);
     }
 
     public String getNaam() {

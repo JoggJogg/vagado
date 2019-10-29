@@ -2,6 +2,7 @@ package nl.han.oose.ooad.vagado;
 
 import nl.han.oose.ooad.vagado.vraag.Vraag;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,24 +16,21 @@ public class QuizVragen {
 
     private static final int AMOUNT_OF_QUESTIONS = 10;
 
+    public QuizVragen(){
+        vragen = new ArrayList();
+    };
 
-
-    public List<Vraag> genereerQuizVragen(String naamVragenLijst) {
+    public void genereerQuizVragen(Vragenlijst vragenlijst) {
         Random rand = new Random();
-        List<Vraag> vragenlijst = Objects.requireNonNull(getVragenlijst(naamVragenLijst)).getVragen();
-        List<Vraag> quizVragenlijst = new ArrayList<>();
+        Vragenlijst copiedVragenlijst = vragenlijst;
         for(int i = 0; i < AMOUNT_OF_QUESTIONS; i++) {
-            int randomIndex = rand.nextInt(vragenlijst.size());
-            quizVragenlijst.add(vragenlijst.get(randomIndex));
-            vragenlijst.remove(randomIndex);
+            int randomIndex = rand.nextInt(copiedVragenlijst.getVragen().size());
+            vragen.add(copiedVragenlijst.getVragen().get(randomIndex));
+            copiedVragenlijst.getVragen().remove(randomIndex);
         }
-        return quizVragenlijst;
     }
 
-    private Vragenlijst getVragenlijst(String naamVragenLijst) {
-        for(Vragenlijst vragenlijst: vragenlijsten) {
-            if(vragenlijst.getNaam().equals(naamVragenLijst)) return vragenlijst;
-        }
-        return null;
+    public List<Vraag> getVragen() {
+        return vragen;
     }
 }

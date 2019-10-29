@@ -8,5 +8,16 @@ public abstract class Vraag {
     private int vraagNummer;
     private Score score;
 
+    public Vraag(int vraagnummer, String vraag) {
+        this.vraagNummer = vraagnummer;
+        this.vraag = vraag;
+    }
+
     public abstract boolean checkAntwoord(String gebruikerAntwoord);
+
+    public abstract void toonVraag();
+
+    public String getVraag() {
+        return vraag;
+    }
 }

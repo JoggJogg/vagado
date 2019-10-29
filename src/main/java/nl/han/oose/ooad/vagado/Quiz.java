@@ -11,7 +11,7 @@ public class Quiz {
         this.quizVragen = new QuizVragen();
     }
 
-    public void genereerQuizVragen(String vragenlijst) {
+    public void genereerQuizVragen(Vragenlijst vragenlijst) {
         quizVragen.genereerQuizVragen(vragenlijst);
     }
 

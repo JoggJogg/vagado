@@ -7,7 +7,13 @@ import java.util.List;
 public class Thema {
 
     private String naam;
-    private String onderwerp;
-    private List<Vraag> vragen;
+
+    public Thema(String naam) {
+        this.naam = naam;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
     
 }

@@ -30,7 +30,7 @@ public class QuizVragen {
         }
     }
 
-    public List<Vraag> getVragen() {
-        return vragen;
+    public void toonVraag(int beurt) {
+        vragen.get(beurt).toonVraag();
     }
 }

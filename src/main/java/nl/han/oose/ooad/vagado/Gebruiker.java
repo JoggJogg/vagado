@@ -6,13 +6,11 @@ import java.util.List;
 public class Gebruiker {
 
     private String gebruikersnaam;
-    private String wachtwoord;
     private Saldo saldo;
     private List<Vragenlijst> vragenlijsten;
 
-    public Gebruiker(String gebruikersnaam, String wachtwoord) {
+    public Gebruiker(String gebruikersnaam) {
         this.gebruikersnaam = gebruikersnaam;
-        this.wachtwoord = wachtwoord;
         saldo = new Saldo();
         saldo.setSaldo(200);
         vragenlijsten = new ArrayList<>();
@@ -24,5 +22,9 @@ public class Gebruiker {
 
     public void addVragenlijst(Vragenlijst v) {
         vragenlijsten.add(v);
+    }
+
+    public String getGebruikersnaam() {
+        return gebruikersnaam;
     }
 }

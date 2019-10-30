@@ -8,5 +8,7 @@ public interface Berekening {
 
     int berekenPunten(List<Vraag> vragen, int bonusPunten);
 
+    boolean alleVragenGoed(int puntenTotaal);
+
     int getPuntenPerVraag();
 }

@@ -10,7 +10,6 @@ public class QuizVragen {
 
     private int tijd;
     private List<Vraag> vragen;
-    private List<Vragenlijst> vragenlijsten;
 
     private static final int AMOUNT_OF_QUESTIONS = 10;
 
@@ -19,23 +18,26 @@ public class QuizVragen {
     };
 
     public void genereerQuizVragen(Vragenlijst vragenlijst) {
-        Random rand = new Random();
+        Random random = new Random();
         for(int i = 0; i < AMOUNT_OF_QUESTIONS; i++) {
-            int randomIndex = rand.nextInt(vragenlijst.getVragen().size());
-            vragen.add(vragenlijst.getVragen().get(randomIndex));
+            int randomIndex = random.nextInt(vragenlijst.getVragen().size());
+            Vraag randomVraag = vragenlijst.getVragen().get(randomIndex);
+            vragen.add(randomVraag);
             vragenlijst.getVragen().remove(randomIndex);
         }
     }
 
-    public void checkAntwoord(int vraagNummer, String antwoord) {
-        vragen.get(vraagNummer).checkAntwoord(antwoord);
+    public void checkAntwoord(int vraagNummer, String gebruikerAntwoord) {
+        vragen.get(vraagNummer).checkAntwoord(gebruikerAntwoord);
     }
 
-    public void toonVraag(int beurt) {
-        vragen.get(beurt).toonVraag();
+    public void toonVraag(int vraagNummer) {
+        vragen.get(vraagNummer).toonVraag();
     }
 
     public List<Vraag> getVragen() {
         return vragen;
     }
+
+
 }

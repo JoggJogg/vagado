@@ -13,31 +13,27 @@ public class Quiz {
     public Quiz() {
         this.quizVragen = new QuizVragen();
         this.gebruikers = new ArrayList<>();
-        Gebruiker speler = new Gebruiker("Henkieeee");
-        gebruikers.add(speler);
+        Gebruiker gebruiker = new Gebruiker("Henkieeee");
+        gebruikers.add(gebruiker);
         gebruikers.add(new Gebruiker("Kees" ));
         gebruikers.add(new Gebruiker("Jan" ));
         Vragenlijst voetbal = new Vragenlijst(1,"Voetbal", new Thema("Sport"));
-        speler.addVragenlijst(voetbal);
+        gebruiker.addVragenlijst(voetbal);
         puntentelling = new Puntentelling();
         puntentelling.setBerekening(new BerekeningStandaard());
+        gebruiker.setLifetimeBest(1, 5);
     }
 
 
-    public void toonVragenlijsten(String gebruikersnaam) {
-        Gebruiker speler = getGebruiker(gebruikersnaam);
-        List<Vragenlijst> vragenlijstenVanGebruiker = speler.getVragenlijsten();
-        for(Vragenlijst v : vragenlijstenVanGebruiker) {
-            System.out.println(v.getNummer() + " Thema: " + v.getThema() + " Naam: " + v.getNaam());
-        }
+    public List<Vragenlijst> getVragenlijsten(String gebruikersnaam) {
+        Gebruiker gebruiker = getGebruiker(gebruikersnaam);
+        return gebruiker.getVragenlijsten();
     }
 
     public void kiesVragenlijst(int vragenlijstNummer, String gebruikersnaam) {
         Gebruiker gebruiker = getGebruiker(gebruikersnaam);
-        for(Vragenlijst vragenlijst: gebruiker.getVragenlijsten()) {
-            if(vragenlijst.getNummer() == vragenlijstNummer) {
-                quizVragen.genereerQuizVragen(vragenlijst);            }
-        }
+        Vragenlijst vragenlijst = gebruiker.getVragenlijst(vragenlijstNummer);
+        quizVragen.genereerQuizVragen(vragenlijst);
     }
 
     public void toonVraag(int beurt) {
@@ -48,8 +44,18 @@ public class Quiz {
         quizVragen.checkAntwoord(vraagNummer, gebruikersAntwoord);
     }
 
-    public int berekenPuntenTotaal() {
-        return puntentelling.berekenPunten(quizVragen.getVragen());
+    public int berekenPunten(String gebruikersnaam, int vragenlijstNummer) {
+        Gebruiker gebruiker = getGebruiker(gebruikersnaam);
+        int puntenTotaal = puntentelling.berekenPunten(quizVragen.getVragen());
+        if(puntentelling.alleVragenGoed(puntenTotaal)) {
+            gebruiker.voegMuntenToe(2);
+            System.out.println("Alle vragen goed beantwoord! Je hebt 2 munten verdiend. Je nieuwe saldo is: " + gebruiker.getSaldo());
+        }
+        if(puntenTotaal > gebruiker.getLifetimeBest(vragenlijstNummer)) {
+            gebruiker.setLifetimeBest(vragenlijstNummer, puntenTotaal);
+            System.out.println("Nieuw lifetime best!");
+        }
+        return puntenTotaal;
     }
 
     private Gebruiker getGebruiker(String gebruikersnaam) {
@@ -60,4 +66,6 @@ public class Quiz {
         }
         return null;
     }
+
+
 }

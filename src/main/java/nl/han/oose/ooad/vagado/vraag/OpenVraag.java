@@ -5,19 +5,22 @@ import java.util.List;
 
 public class OpenVraag extends Vraag {
 
-    private List<Antwoord> antwoorden;
+    private Antwoord[] antwoorden;
 
-    public OpenVraag(int vraagnummer, String vraag, List<Antwoord> antwoorden) {
+    public OpenVraag(int vraagnummer, String vraag, Antwoord[] antwoorden) {
         super(vraagnummer, vraag);
         this.antwoorden = antwoorden;
     }
 
     @Override
     public void checkAntwoord(String userAntwoord) {
+        userAntwoord = userAntwoord.toLowerCase();
         for(Antwoord antwoord: antwoorden) {
-            goedBeantwoord = antwoord.checkAntwoord(userAntwoord);
-            return;
+            score.setGoedBeantwoord(antwoord.checkAntwoord(userAntwoord));
+            break;
         }
+        if(score.isGoedBeantwoord()) System.out.println("GOED!");
+        else System.out.println("FOUT");
     }
 
     @Override

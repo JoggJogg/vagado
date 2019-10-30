@@ -16,4 +16,8 @@ public class Puntentelling {
     public void setBerekening(Berekening berekening) {
         this.berekening = berekening;
     }
+
+    public boolean alleVragenGoed(int puntenTotaal) {
+        return berekening.alleVragenGoed(puntenTotaal);
+    }
 }

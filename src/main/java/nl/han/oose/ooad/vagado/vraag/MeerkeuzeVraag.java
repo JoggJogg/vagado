@@ -13,8 +13,9 @@ public class MeerkeuzeVraag extends Vraag {
 
     @Override
     public void checkAntwoord(String gebruikerAntwoord) {
-        goedBeantwoord = antwoord.checkAntwoord(gebruikerAntwoord);
-        if(goedBeantwoord) System.out.println("GOED!");
+        gebruikerAntwoord = gebruikerAntwoord.toUpperCase();
+        score.setGoedBeantwoord(antwoord.checkAntwoord(gebruikerAntwoord));
+        if(score.isGoedBeantwoord()) System.out.println("GOED!");
         else System.out.println("FOUT");
     }
 

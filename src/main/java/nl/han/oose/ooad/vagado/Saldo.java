@@ -8,8 +8,8 @@ public class Saldo {
         return munten;
     }
 
-    public void setSaldo(int saldo) {
-        munten = saldo;
+    public void voegMuntenToe(int munten) {
+        this.munten += munten;
     }
 
 }

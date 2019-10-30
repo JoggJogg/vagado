@@ -12,8 +12,11 @@ public class MeerkeuzeVraag extends Vraag {
     }
 
     @Override
-    public boolean checkAntwoord(String gebruikerAntwoord) {
-        return antwoord.checkAntwoord(gebruikerAntwoord);
+    public void checkAntwoord(String gebruikerAntwoord) {
+        gebruikerAntwoord = gebruikerAntwoord.toUpperCase();
+        score.setGoedBeantwoord(antwoord.checkAntwoord(gebruikerAntwoord));
+        if(score.isGoedBeantwoord()) System.out.println("GOED!");
+        else System.out.println("FOUT");
     }
 
     @Override

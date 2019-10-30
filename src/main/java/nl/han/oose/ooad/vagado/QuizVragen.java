@@ -2,17 +2,14 @@ package nl.han.oose.ooad.vagado;
 
 import nl.han.oose.ooad.vagado.vraag.Vraag;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class QuizVragen {
 
     private int tijd;
     private List<Vraag> vragen;
-    private List<Vragenlijst> vragenlijsten;
 
     private static final int AMOUNT_OF_QUESTIONS = 10;
 
@@ -21,16 +18,26 @@ public class QuizVragen {
     };
 
     public void genereerQuizVragen(Vragenlijst vragenlijst) {
-        Random rand = new Random();
-        Vragenlijst copiedVragenlijst = vragenlijst;
+        Random random = new Random();
         for(int i = 0; i < AMOUNT_OF_QUESTIONS; i++) {
-            int randomIndex = rand.nextInt(copiedVragenlijst.getVragen().size());
-            vragen.add(copiedVragenlijst.getVragen().get(randomIndex));
-            copiedVragenlijst.getVragen().remove(randomIndex);
+            int randomIndex = random.nextInt(vragenlijst.getVragen().size());
+            Vraag randomVraag = vragenlijst.getVragen().get(randomIndex);
+            vragen.add(randomVraag);
+            vragenlijst.getVragen().remove(randomIndex);
         }
     }
 
-    public void toonVraag(int beurt) {
-        vragen.get(beurt).toonVraag();
+    public void checkAntwoord(int vraagNummer, String gebruikerAntwoord) {
+        vragen.get(vraagNummer).checkAntwoord(gebruikerAntwoord);
     }
+
+    public void toonVraag(int vraagNummer) {
+        vragen.get(vraagNummer).toonVraag();
+    }
+
+    public List<Vraag> getVragen() {
+        return vragen;
+    }
+
+
 }

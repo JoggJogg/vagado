@@ -12,8 +12,10 @@ public class MeerkeuzeVraag extends Vraag {
     }
 
     @Override
-    public boolean checkAntwoord(String gebruikerAntwoord) {
-        return antwoord.checkAntwoord(gebruikerAntwoord);
+    public void checkAntwoord(String gebruikerAntwoord) {
+        goedBeantwoord = antwoord.checkAntwoord(gebruikerAntwoord);
+        if(goedBeantwoord) System.out.println("GOED!");
+        else System.out.println("FOUT");
     }
 
     @Override

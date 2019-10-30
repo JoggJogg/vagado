@@ -2,10 +2,8 @@ package nl.han.oose.ooad.vagado;
 
 import nl.han.oose.ooad.vagado.vraag.Vraag;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class QuizVragen {
@@ -22,15 +20,22 @@ public class QuizVragen {
 
     public void genereerQuizVragen(Vragenlijst vragenlijst) {
         Random rand = new Random();
-        Vragenlijst copiedVragenlijst = vragenlijst;
         for(int i = 0; i < AMOUNT_OF_QUESTIONS; i++) {
-            int randomIndex = rand.nextInt(copiedVragenlijst.getVragen().size());
-            vragen.add(copiedVragenlijst.getVragen().get(randomIndex));
-            copiedVragenlijst.getVragen().remove(randomIndex);
+            int randomIndex = rand.nextInt(vragenlijst.getVragen().size());
+            vragen.add(vragenlijst.getVragen().get(randomIndex));
+            vragenlijst.getVragen().remove(randomIndex);
         }
+    }
+
+    public void checkAntwoord(int vraagNummer, String antwoord) {
+        vragen.get(vraagNummer).checkAntwoord(antwoord);
     }
 
     public void toonVraag(int beurt) {
         vragen.get(beurt).toonVraag();
+    }
+
+    public List<Vraag> getVragen() {
+        return vragen;
     }
 }

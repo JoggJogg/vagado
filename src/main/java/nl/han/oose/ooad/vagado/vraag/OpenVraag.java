@@ -13,11 +13,11 @@ public class OpenVraag extends Vraag {
     }
 
     @Override
-    public boolean checkAntwoord(String userAntwoord) {
+    public void checkAntwoord(String userAntwoord) {
         for(Antwoord antwoord: antwoorden) {
-            if(antwoord.checkAntwoord(userAntwoord)) return true;
+            goedBeantwoord = antwoord.checkAntwoord(userAntwoord);
+            return;
         }
-        return false;
     }
 
     @Override

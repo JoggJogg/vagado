@@ -27,4 +27,6 @@ public class Gebruiker {
     public String getGebruikersnaam() {
         return gebruikersnaam;
     }
+
+
 }

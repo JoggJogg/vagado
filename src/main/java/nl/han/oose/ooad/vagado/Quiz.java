@@ -6,14 +6,11 @@ import java.util.Scanner;
 
 public class Quiz {
 
-    private int puntenTotaal;
     private QuizVragen quizVragen;
     private Puntentelling puntentelling;
     private List<Gebruiker> gebruikers;
-    private Scanner scanner;
 
     public Quiz() {
-        scanner = new Scanner(System.in);
         this.quizVragen = new QuizVragen();
         this.gebruikers = new ArrayList<>();
         Gebruiker speler = new Gebruiker("Henkieeee");
@@ -22,29 +19,37 @@ public class Quiz {
         gebruikers.add(new Gebruiker("Jan" ));
         Vragenlijst voetbal = new Vragenlijst(1,"Voetbal", new Thema("Sport"));
         speler.addVragenlijst(voetbal);
+        puntentelling = new Puntentelling();
+        puntentelling.setBerekening(new BerekeningStandaard());
     }
 
-    public void speelQuiz(String gebruikersnaam) {
+
+    public void toonVragenlijsten(String gebruikersnaam) {
         Gebruiker speler = getGebruiker(gebruikersnaam);
         List<Vragenlijst> vragenlijstenVanGebruiker = speler.getVragenlijsten();
         for(Vragenlijst v : vragenlijstenVanGebruiker) {
             System.out.println(v.getNummer() + " Thema: " + v.getThema() + " Naam: " + v.getNaam());
         }
-        System.out.println("Kies vragenlijst, vul het nummer van de vragenlijst in: ");
-        String vraaglijstNummer = scanner.nextLine();
-        Vragenlijst vragenlijst = speler.getVragenlijsten().get(Integer.parseInt(vraaglijstNummer)-1);
-        genereerQuizVragen(vragenlijst);
-        toonVraag(1);
     }
 
-
-    public void genereerQuizVragen(Vragenlijst vragenlijst) {
-        quizVragen.genereerQuizVragen(vragenlijst);
+    public void kiesVragenlijst(int vragenlijstNummer, String gebruikersnaam) {
+        Gebruiker gebruiker = getGebruiker(gebruikersnaam);
+        for(Vragenlijst vragenlijst: gebruiker.getVragenlijsten()) {
+            if(vragenlijst.getNummer() == vragenlijstNummer) {
+                quizVragen.genereerQuizVragen(vragenlijst);            }
+        }
     }
-
 
     public void toonVraag(int beurt) {
         quizVragen.toonVraag(beurt);
+    }
+
+    public void beantwoordVraag(String gebruikersAntwoord, int vraagNummer) {
+        quizVragen.checkAntwoord(vraagNummer, gebruikersAntwoord);
+    }
+
+    public int berekenPuntenTotaal() {
+        return puntentelling.berekenPunten(quizVragen.getVragen());
     }
 
     private Gebruiker getGebruiker(String gebruikersnaam) {

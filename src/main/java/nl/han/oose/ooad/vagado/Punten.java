@@ -1,6 +1,6 @@
 package nl.han.oose.ooad.vagado;
 
-public class Score {
+public class Punten {
 
     private boolean goedBeantwoord;
 

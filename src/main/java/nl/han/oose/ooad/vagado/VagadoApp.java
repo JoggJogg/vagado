@@ -12,7 +12,7 @@ public class VagadoApp {
 
         List<Vragenlijst> vragenlijsten = quiz.getVragenlijsten(gebruikersnaam);
         for(Vragenlijst v : vragenlijsten) {
-            System.out.println(v.getNummer() + " Thema: " + v.getThema() + " Naam: " + v.getNaam());
+            System.out.println(v.getNummer() + " Thema: " + v.getThema() + " Naam: " + v.getOnderwerp());
         }
         System.out.println("Kies vragenlijst, vul het nummer van de vragenlijst in: ");
         int vragenlijstNummer = Integer.parseInt(scanner.nextLine());

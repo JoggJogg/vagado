@@ -15,7 +15,7 @@ public class Gebruiker {
     public Gebruiker(String gebruikersnaam) {
         this.gebruikersnaam = gebruikersnaam;
         saldo = new Saldo();
-        saldo.voegMuntenToe(200);
+        saldo.voegMuntenToe(100);
         vragenlijsten = new ArrayList<>();
         lifetimeBest = new HashMap<>();
     }

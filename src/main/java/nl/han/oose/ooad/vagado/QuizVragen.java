@@ -34,6 +34,4 @@ public class QuizVragen {
     public List<Vraag> getVragen() {
         return vragen;
     }
-
-
 }

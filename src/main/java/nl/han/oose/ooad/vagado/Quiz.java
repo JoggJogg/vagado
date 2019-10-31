@@ -17,7 +17,7 @@ public class Quiz {
         gebruikers.add(gebruiker);
         gebruikers.add(new Gebruiker("Kees" ));
         gebruikers.add(new Gebruiker("Jan" ));
-        Vragenlijst voetbal = new Vragenlijst(1,"Voetbal", new Thema("Sport"));
+        Vragenlijst voetbal = new Vragenlijst(1,"Trivia", new Thema("Algemeen"));
         gebruiker.addVragenlijst(voetbal);
         puntentelling = new Puntentelling();
         puntentelling.setBerekening(new BerekeningStandaard());

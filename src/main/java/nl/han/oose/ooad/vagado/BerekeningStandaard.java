@@ -22,7 +22,7 @@ public class BerekeningStandaard implements Berekening {
         return puntenTotaal/10 == puntenPerVraag;
     }
 
-    public int verhoogPuntenTotaal(int totaal, int verhoging) {
+    private int verhoogPuntenTotaal(int totaal, int verhoging) {
         return totaal + verhoging;
     }
 

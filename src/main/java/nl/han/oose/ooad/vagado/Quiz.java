@@ -23,8 +23,7 @@ public class Quiz {
         puntentelling.setBerekening(new BerekeningStandaard());
         gebruiker.setLifetimeBest(1, 5);
     }
-
-
+    
     public List<Vragenlijst> getVragenlijsten(String gebruikersnaam) {
         Gebruiker gebruiker = getGebruiker(gebruikersnaam);
         return gebruiker.getVragenlijsten();

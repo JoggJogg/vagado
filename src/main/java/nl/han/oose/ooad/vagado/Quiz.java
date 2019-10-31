@@ -24,7 +24,6 @@ public class Quiz {
         gebruiker.setLifetimeBest(1, 5);
     }
 
-
     public List<Vragenlijst> getVragenlijsten(String gebruikersnaam) {
         Gebruiker gebruiker = getGebruiker(gebruikersnaam);
         return gebruiker.getVragenlijsten();
@@ -66,6 +65,4 @@ public class Quiz {
         }
         return null;
     }
-
-
 }

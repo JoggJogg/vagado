@@ -1,14 +1,11 @@
-package nl.han.oose.ooad.vagado.vraag;
-
-import java.util.ArrayList;
-import java.util.List;
+package nl.han.oose.ooad.vagado;
 
 public class OpenVraag extends Vraag {
 
     private Antwoord[] antwoorden;
 
-    public OpenVraag(int vraagnummer, String vraag, Antwoord[] antwoorden) {
-        super(vraagnummer, vraag);
+    public OpenVraag(String vraag, Antwoord[] antwoorden) {
+        super(vraag);
         this.antwoorden = antwoorden;
     }
 
@@ -16,10 +13,10 @@ public class OpenVraag extends Vraag {
     public void checkAntwoord(String userAntwoord) {
         userAntwoord = userAntwoord.toLowerCase();
         for(Antwoord antwoord: antwoorden) {
-            score.setGoedBeantwoord(antwoord.checkAntwoord(userAntwoord));
+            punten.setGoedBeantwoord(antwoord.checkAntwoord(userAntwoord));
             break;
         }
-        if(score.isGoedBeantwoord()) System.out.println("GOED!");
+        if(punten.isGoedBeantwoord()) System.out.println("GOED!");
         else System.out.println("FOUT");
     }
 

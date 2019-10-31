@@ -1,7 +1,5 @@
 package nl.han.oose.ooad.vagado;
 
-import nl.han.oose.ooad.vagado.vraag.Vraag;
-
 import java.util.List;
 
 public class Puntentelling {

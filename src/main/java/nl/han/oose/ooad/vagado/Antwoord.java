@@ -1,4 +1,4 @@
-package nl.han.oose.ooad.vagado.vraag;
+package nl.han.oose.ooad.vagado;
 
 public class Antwoord {
 

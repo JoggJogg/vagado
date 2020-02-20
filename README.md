@@ -5,6 +5,6 @@ It is made for an assignment for the course Object Oriented Analysis and Design 
 
 ## How to play
 
-To run the quiz use your favourite IDE and run the `main()` function.
+To run the quiz use your favourite IDE and run the `main()` function located in `VagadoApp.java`.
 
 Have fun!
